@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { NavigationModel, keysOfNavigationModel } from '@components/navigation/navigation-model';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+     <Router>
+      <Routes>
+        {
+          keysOfNavigationModel.map((key: string, _i: number) => (
+            <React.Fragment>
+              <Route caseSensitive key={ _i } path={ NavigationModel[key]['path']['parent'] } element={ NavigationModel[key]['element']['parent'] } />
+              {
+                !!NavigationModel[key]['path']['child'] && (<Route key={ _i * 10 } path={ NavigationModel[key]['path']['child']! } element={ NavigationModel[key]['element']['child'] } />)
+              }
+            </React.Fragment>
+          ))
+        }
+      </Routes>
+     </Router>
+    </React.Fragment>
   );
 }
 
