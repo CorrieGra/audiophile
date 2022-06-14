@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { NavigationModel, keysOfNavigationModel } from '@components/navigation/navigation-model';
+import { IRoute, routes } from '@routes/index';
 
 function App() {
   return (
@@ -8,11 +8,11 @@ function App() {
      <Router>
       <Routes>
         {
-          keysOfNavigationModel.map((key: string, _i: number) => (
+          routes.map((route: IRoute, _i: number) => (
             <React.Fragment>
-              <Route caseSensitive key={ _i } path={ NavigationModel[key]['path']['parent'] } element={ NavigationModel[key]['element']['parent'] } />
+              <Route caseSensitive key={ _i } path={ route.path.parent } element={ route.element.parent } />
               {
-                !!NavigationModel[key]['path']['child'] && (<Route key={ _i * 10 } path={ NavigationModel[key]['path']['child']! } element={ NavigationModel[key]['element']['child'] } />)
+                !!route.path.child && (<Route key={ _i * 10 } path={ route.path.child } element={ route.element.child } />)
               }
             </React.Fragment>
           ))
