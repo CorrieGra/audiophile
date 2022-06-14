@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { InputHTMLAttributes } from 'react';
 import { RadioContainer } from './radio-styles';
 
-export const Radio: React.FC = (): React.ReactElement => {
+type TRadioType = 'checkbox' | 'radio' | undefined;
+interface IRadioProps extends InputHTMLAttributes<HTMLInputElement> {
+    text: string;
+    type?: TRadioType;
+}
+
+export const Radio: React.FC<IRadioProps> = ({ value, text, type = 'checkbox' }): React.ReactElement => {
     return (
         <RadioContainer>
-            <input type='radio' value='nothing' />
-            <p>Nothing</p>
+            <input type={ type } value={ value } />
+            <p>{ text }</p>
         </RadioContainer>
     );
 }
