@@ -1,13 +1,52 @@
+@font-face {
+  font-family: 'manrope-r';
+  src: local('manrope-r'), url('./fonts/Manrope-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'manrope-m';
+  src: local('manrope-m'), url('./fonts/Manrope-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'manrope-b';
+  src: local('manrope-b'), url('./fonts/Manrope-Bold.ttf') format('truetype');
+}
+
+*,
+*::before,
+*::after,
+html,
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'manrope-r';
+  font-size: 1.5rem;
+  line-height: 25px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { 
+  font-family: 'manrope-b'; 
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
