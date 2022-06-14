@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { InputHTMLAttributes } from 'react';
 import { Render } from '@utils/render';
 import { SInput } from './input-styles';
 
-interface IInput {
+interface IInput extends InputHTMLAttributes<HTMLInputElement> {
     labelLeft?: string;
     labelRight?: string;
-    placeholder?: string;
 }
 
 export const Input: React.FC<IInput> = ({ labelLeft = null, labelRight = null, placeholder = '', ...props }): React.ReactElement => {
