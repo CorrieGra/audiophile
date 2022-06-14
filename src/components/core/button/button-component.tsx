@@ -8,7 +8,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     text?: string;
 }
 
-export const Button: React.FC<IButtonProps> = ({ variant = 'Button', text, children = null, ...props }) => {
+export const Button: React.FC<IButtonProps> = ({ variant = 'Button', text, children = null, ...props }): React.ReactElement => {
     const ButtonComponent = sComponents[variant];
 
     return (
