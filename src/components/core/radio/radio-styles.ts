@@ -11,6 +11,7 @@ export const RadioContainer = styled.div`
     padding: 1.8rem 2.4rem;
     margin: 1rem 0;
 
+    input[type="checkbox"],
     input[type="radio"] {
         position: relative;
         appearance: none;
