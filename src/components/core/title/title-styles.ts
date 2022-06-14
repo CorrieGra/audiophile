@@ -41,12 +41,14 @@ const overline = styled.h6`
     font-size: 1.4rem;
     line-height: 19px;
     letter-spacing: 10px;
+    color: ${ props => props.theme.light.colours.orange.dark }
 `;
 
 const subTitle = styled.h6`
     font-size: 1.3rem;
     line-height: 25px;
     letter-spacing: 1px;
+    color: ${ props => props.theme.light.colours.orange.dark }
 `;
 
 export {
